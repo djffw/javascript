@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const obj = {
+            name: 'old8',
+            age: 18,
+            gneder: 'man'
+        }
+        //存，加引号
+        localStorage.setItem('uname', 'old8')
+        //取
+        console.log(localStorage.getItem('uname'))
+        //删
+        // localStorage.removeItem('uname')
+
+        //复杂数据类型
+        //存
+        localStorage.setItem('obj', JSON.stringify(obj))
+        //取
+        const a = localStorage.getItem('obj')
+        console.log(JSON.parse(a));
+    </script>
+</body>
+
+</html>

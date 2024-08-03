@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <textarea name="tx" id="tx" class="tx"></textarea>
+    <div></div>
+    <script>
+        const tx = document.querySelector('.tx')
+        const div = document.querySelector('div')
+        tx.addEventListener('keyup', function (e) {
+            //按下回车键事件
+            if (e.key === 'Enter') {
+                //trim()函数去除左右空格
+                if (tx.value.trim() !== '') {
+                    div.style.display = 'block'
+                    div.innerHTML = tx.value
+                }
+                //清空文本域
+                tx.value = ''
+            }
+        })
+    </script>
+</body>
+
+</html>

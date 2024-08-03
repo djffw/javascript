@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const a = document.createElement('a')
+        const body = document.querySelector('body')
+        console.log(body);
+        a.href = 'http://www.baidu.com'
+        body.appendChild(a)
+        let time = 5
+        let id = setInterval(function () {
+            a.innerHTML = `${time--}秒后跳转`
+            //location设置herf属性跳转页面
+            if (time === 0) {
+                //不用了要清除定时器
+                clearInterval(id)
+                location.href = 'http://www.baidu.com'
+            }
+        }, 1000)
+    </script>
+</body>
+
+</html>
